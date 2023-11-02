@@ -27,21 +27,21 @@
 public class PalindromeNumber {
 
   public static boolean isPalindrome(final int x) {
-    final String number = Integer.toString(x);
+    final String number = String.valueOf(x);
 
-    final String[] separadetNumber = number.split("");
+    int n = number.length();
 
-    String[] inverseNumber = new String[separadetNumber.length];
+    for (int i = 0; i <= n / 2; i ++) {
+      char a = number.charAt(i);
+      char b = number.charAt(n - i - 1);
 
-    for (int i = 1; i <= separadetNumber.length; i++) {
-      inverseNumber[i - 1] = separadetNumber[separadetNumber.length - i];
+      if (a != b) {
+        return false;
+      }
+
     }
 
-    if (number.equals(String.join("", inverseNumber))) {
-      return true;
-    }
-
-    return false;
+    return true;
   }
 
   public static void main(final String[] args) {
