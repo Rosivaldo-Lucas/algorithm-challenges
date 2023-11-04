@@ -49,28 +49,27 @@ public class SearchInsertPosition {
     int init = 0;
     int end = nums.length;
 
-    while (init <= end) {
-      int m = (init + end) / 2;
+    while (init < end) {
+      int m = init + (end - init) / 2;
 
       if (nums[m] == target) {
-        end = m + 1;
+        return m;
+      } else if (target < nums[m]) {
+        end = m;
+
       } else {
-        if (target < nums[m]) {
-          end = m - 1;
-        } else {
-          init = m + 1;
-        }
+        init = m + 1;
       }
     }
 
-    return end;
+    return init;
   }
 
   public static void main(String[] args) {
     int[] nums = new int[] {1, 3, 5, 6, 7, 9};
-    int target = 5;
+    int target = 8;
 
-    int result = searchInsert(nums, target);
+    int result = searchInsert2(nums, target);
   
     System.out.println(result);
   }
