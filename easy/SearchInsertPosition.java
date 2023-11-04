@@ -45,9 +45,30 @@ public class SearchInsertPosition {
     return r;
   }
 
+  public static int searchInsert2(final int[] nums, final int target) {
+    int init = 0;
+    int end = nums.length;
+
+    while (init <= end) {
+      int m = (init + end) / 2;
+
+      if (nums[m] == target) {
+        end = m + 1;
+      } else {
+        if (target < nums[m]) {
+          end = m - 1;
+        } else {
+          init = m + 1;
+        }
+      }
+    }
+
+    return end;
+  }
+
   public static void main(String[] args) {
     int[] nums = new int[] {1, 3, 5, 6, 7, 9};
-    int target = 8;
+    int target = 5;
 
     int result = searchInsert(nums, target);
   
