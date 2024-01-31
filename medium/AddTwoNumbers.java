@@ -1,5 +1,3 @@
-package medium;
-
 public class AddTwoNumbers {
 
   public static ListNode addTwoNumbers(final ListNode l1, final ListNode l2) {
