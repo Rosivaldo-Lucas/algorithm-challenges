@@ -29,6 +29,8 @@ public class Loops2 {
 
         System.out.print(m + " ");
       }
+
+      System.out.print("\n");
     }
 
     bufferedReader.close();
