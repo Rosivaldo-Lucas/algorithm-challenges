@@ -1,4 +1,4 @@
-package br.com.rosivaldolucas.algorithm.neetcode;
+package br.com.rosivaldolucas.algorithm.neetcode.easy;
 
 import java.util.HashMap;
 import java.util.Map;
